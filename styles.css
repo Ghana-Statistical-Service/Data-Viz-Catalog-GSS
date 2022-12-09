@@ -9,11 +9,11 @@ p {
 
 /* make titles blue */
 	h1 {
-		color: #1696d2;
+		color: #382873;
 	}
 
 .navbar {
-  background-color: #1696d2;
+  background-color: #382873;
   color: #ffffff;
   font-weight: bold;
 }
@@ -31,7 +31,7 @@ p {
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    color: #1696d2;
+    color: #382873;
     background-color: #FFFFFF;
 }
 

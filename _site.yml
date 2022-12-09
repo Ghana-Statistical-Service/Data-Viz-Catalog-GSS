@@ -1,6 +1,6 @@
-name: R@URBAN
+name: GSS Data Viz
 navbar:
-  title: R@URBAN
+  title: GSS Data Viz
   left:
   - text: HOME
     href: index.html
