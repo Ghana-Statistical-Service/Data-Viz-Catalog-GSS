@@ -17,16 +17,17 @@ This website contains resources for using R at the Ghana Statistical Service  vi
 
 *Ghana Statistical Service, with the mandate provided by Act 1003 to provide leadership and coordination of the National Statistical System (NSS), undertook a national capacity assessment. This led to the organisation of a national data roadmap that proposed three key priorities for action in strengthening the NSS in Ghana; namely: addressing data gaps,encouraging data use, and strengthening the data ecosystem.*#
 
-##
-##
-## Contact Info
-
-Please don't hesitate to contact Selaseh Akaho (selaseh.akaho@statsghana.gov.gh) or Laurent Smeet (laurent.smeets@live.nl) with any thoughts or questions about Data Science Ghana Statistical Service. 
 
 ##
 ##
 ## Data Science Lunch Chats
 
 The Data Science team of the Ghana Statistical Service would host a monthly release of a video discussion with members of the Statistics space of Ghana. Each Session would be a 15-20 minutes discussiona and 2-5 minutes quick tip. Afterwards, attendees would be allowed to send in questions and propose topics for the next sessions. 
+
+##
+##
+## Contact Info
+
+Please don't hesitate to contact Selaseh Akaho (selaseh.akaho@statsghana.gov.gh) or Laurent Smeet (laurent.smeets@live.nl) with any thoughts or questions about Data Science Ghana Statistical Service. 
 
 

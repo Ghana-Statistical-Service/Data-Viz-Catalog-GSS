@@ -4,18 +4,18 @@ navbar:
   left:
   - text: HOME
     href: index.html
-  - text: INTRO TO R
-    href: intro-to-r.html
+  #- text: INTRO TO R
+  #  href: intro-to-r.html
   - text: DATA VIZ
     href: graphics-guide.html
-  - text: MAPPING
-    href: mapping.html
-  - text: GETTING DATA
-    href: getting-data.html    
-  - text: OPTIMIZATION
-    href: optimization.html
-  - text: RESOURCES
-    href: resources.html    
+  # - text: MAPPING
+  #   href: mapping.html
+  # - text: GETTING DATA
+  #   href: getting-data.html    
+  # - text: OPTIMIZATION
+  #   href: optimization.html
+  # - text: RESOURCES
+  #   href: resources.html    
 output:
   html_document:
     output_dir: '.'
