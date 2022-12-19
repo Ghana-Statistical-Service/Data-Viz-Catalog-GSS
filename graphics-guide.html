@@ -339,7 +339,7 @@ div.tocify {
   <a href="intro-to-r.html">INTRO TO R</a>
 </li> -->
 <li>
-  <a href="graphics-guide.html">DATA VIZ</a>
+  <a href="graphics-guide.html">Chart Guide</a>
 </li>
 <!-- <li>
   <a href="mapping.html">MAPPING</a>
@@ -377,40 +377,39 @@ div.tocify {
 </div>
 
 
-<p><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato" /></p>
+<p><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Century Gothic" /></p>
 <div id="header">
 <p><img src="graphics-guide/www/images/logo.png" width="100"></p>
 </div>
 <div id="urban-institute-r-graphics-guide" class="section level2">
-<h2>Ghana Statistical Service R Graphics Guide</h2>
+<h2>Ghana Statistical Service R Data Visualisation Guide</h2>
 <hr />
-<p>R is a powerful, open-source programming language and environment. R excels at data management and munging, traditional statistical analysis, machine learning, and reproducible research, but it is probably best known for its graphics. This guide contains examples and instructions for popular and lesser-known plotting techniques in R. It also includes instructions for using <code>urbnthemes</code>, the Urban Institute’s R package for creating near-publication-ready plots with <code>ggplot2</code>. If you have any questions, please don’t hesitate to contact Aaron Williams (<a href="mailto:awilliams@urban.org" class="email">awilliams@urban.org</a>) or Kyle Ueyama (<a href="mailto:kueyama@urban.org" class="email">kueyama@urban.org</a>).</p>
+<p>A robust programming environment and language, R is open-source.Although R is excellent at data management and munging, conventional statistical analysis, machine learning, and reproducible research, its graphics are undoubtedly its most well-known feature. Examples and instructions for both well-known and obscure R charting approaches are included in this guide.It also includes instructions for using <code>gssthemes</code>, the Ghana Statistical Service’s R package for creating near-publication-ready plots with <code>ggplot2</code>. If you have any questions, please don’t hesitate to contact Selaseh Akaho (<a href="mailto:selaseh.akaho@statsghana.gov.gh" class="email">selaseh.akaho@statsghana.gov.gh</a>) or  Laurent Smeet (<a href="mailto:laurent.smeets@live.nl" class="email">laurent.smeets@live.nl</a>).</p>
 <div id="background" class="section level3">
 <h3>Background</h3>
-<p><code>library(urbnthemes)</code> makes <code>ggplot2</code> output align more closely with <a href="http://urbaninstitute.github.io/graphics-styleguide/">the Urban Institute’s Data Visualization style guide</a>. This package does <strong>not produce publication ready graphics</strong>. Visual styles must still be edited using your project/paper’s normal editing workflow.</p>
-<p>Exporting charts as a pdf will allow them to be more easily edited. See the Saving Plots section for more information.</p>
+<p><code>library(gssthemes)</code> makes <code>ggplot2</code> output align more closely with <a href="https://mega.nz/file/wqJWVSTL#rIN91pHQNmjJDVDj5BMsBVI87PHwVZp9XnHKMTie__Y">the GSS Report Writing Format Handbook</a>.
 <p>The theme has been tested against <code>ggplot2 version 3.0.0</code>. It will not function properly with older versions of <code>ggplot2</code></p>
 </div>
-<div id="using-libraryurbnthemes" class="section level3">
-<h3>Using library(urbnthemes)</h3>
-<p>Run the following code to install or update <code>urbnthemes</code>:</p>
+<div id="using-librarygssthemes" class="section level3">
+<h3>Using library(gssthemes)</h3>
+<p>Run the following code to install or update <code>gssthemes</code>:</p>
 <pre><code>install.packages(&quot;remotes&quot;)
-remotes::install_github(&quot;UrbanInstitute/urbnthemes&quot;)</code></pre>
+remotes::install_github(&quot;gss/gssthemes&quot;)</code></pre>
 <p>Run the following code at the top of each script:</p>
 <pre><code>library(tidyverse)
-library(urbnthemes)
+library(gssthemes)
 
-set_urbn_defaults(style = &quot;print&quot;)</code></pre>
+set_gss_defaults(style = &quot;print&quot;)</code></pre>
 </div>
 <div id="installing_lato" class="section level3">
-<h3>Installing Lato</h3>
-<p>Your Urban computer may not have the Lato font installed. If it is not installed, please install the free <a href="https://www.google.com/fonts/specimen/Lato">Lato font from Google</a>. Below are step by step instructions:</p>
+<h3>Installing Century Gothic</h3>
+<p>Your Urban computer may not have the Century Gothic font installed. If it is not installed, please install the free <a href="https://www.google.com/fonts/specimen/Century Gothic">Century Gothic font from Google</a>. Below are step by step instructions:</p>
 <ol style="list-style-type: decimal">
-<li>Download the <a href="https://www.google.com/fonts/specimen/Lato">Lato font</a> (as a zip file).</li>
+<li>Download the <a href="https://www.google.com/fonts/specimen/Century Gothic">Century Gothic font</a> (as a zip file).</li>
 <li>Unzip the file on your computer.</li>
-<li>For each <code>.ttf</code> file in the unzipped <code>Lato/</code> folder, double click the file and click <code>Install</code> (on Windows) or <code>Install Font</code> (on Mac).</li>
-<li>Import and register Lato into R by running <code>urbnthemes::lato_import()</code> in the console once. Be patient as this may take a few minutes!</li>
-<li>To confirm installation, run <code>urbnthemes::lato_test()</code>. If this is successful you’re done and Lato will automatically be used when creating plots with <code>library(urbnthemes)</code>. You only need to install Lato once per computer.</li>
+<li>For each <code>.ttf</code> file in the unzipped <code>Century Gothic/</code> folder, double click the file and click <code>Install</code> (on Windows) or <code>Install Font</code> (on Mac).</li>
+<li>Import and register Century Gothic into R by running <code>gssthemes::lato_import()</code> in the console once. Be patient as this may take a few minutes!</li>
+<li>To confirm installation, run <code>gssthemes::lato_test()</code>. If this is successful you’re done and Century Gothic will automatically be used when creating plots with <code>library(gssthemes)</code>. You only need to install Century Gothic once per computer.</li>
 </ol>
 <p>Waffle charts with glyphs require fontawesome. <code>fontawesome_test()</code> and <code>fontawesome_install()</code> are the fontawesome versions of the above functions. Be sure to install fontawesome from <a href="https://github.com/hrbrmstr/waffle/tree/master/inst/fonts">here</a> first.</p>
 </div>
@@ -459,7 +458,7 @@ set_urbn_defaults(style = &quot;print&quot;)</code></pre>
 </div>
 <div id="one-color-rotated" class="section level3">
 <h3>One Color (Rotated)</h3>
-<p>This example introduces <code>coord_flip()</code> and <code>remove_axis(axis = "x", flip = TRUE)</code>. <code>remove_axis()</code> is from <code>library(urbnthemes)</code> and creates a custom theme for rotated bar plots.</p>
+<p>This example introduces <code>coord_flip()</code> and <code>remove_axis(axis = "x", flip = TRUE)</code>. <code>remove_axis()</code> is from <code>library(gssthemes)</code> and creates a custom theme for rotated bar plots.</p>
 <pre class="r"><code>mtcars %&gt;%
   count(cyl) %&gt;%
   ggplot(mapping = aes(x = factor(cyl), y = n)) +
@@ -584,7 +583,7 @@ set_urbn_defaults(style = &quot;print&quot;)</code></pre>
 <hr />
 <div id="one-color-scatter-plot" class="section level3">
 <h3>One Color Scatter Plot</h3>
-<p>Scatter plots are useful for showing relationships between two or more variables. Use <code>scatter_grid()</code> from <code>library(urbnthemes)</code> to easily add vertical grid lines for scatter plots.</p>
+<p>Scatter plots are useful for showing relationships between two or more variables. Use <code>scatter_grid()</code> from <code>library(gssthemes)</code> to easily add vertical grid lines for scatter plots.</p>
 <pre class="r"><code>mtcars %&gt;%
   ggplot(mapping = aes(x = wt, y = mpg)) +
   geom_point() +
@@ -678,7 +677,7 @@ mpg %&gt;%
 <div id="scatter-plots-with-varying-point-size" class="section level3">
 <h3>Scatter Plots with Varying Point Size</h3>
 <p>Weights and populations can be mapped in scatter plots to the size of the points. Here, the number of households in each state is mapped to the size of each point using <code>aes(size = hhpop)</code>. Note: <code>ggplot2::geom_point()</code> is used instead of <code>geom_point()</code>.</p>
-<pre class="r"><code>urbnmapr::statedata %&gt;%
+<pre class="r"><code>gssmapr::statedata %&gt;%
   ggplot(mapping = aes(x = medhhincome, y = horate)) +
   ggplot2::geom_point(mapping = aes(size = hhpop), alpha = 0.3) +
   scale_x_continuous(expand = expand_scale(mult = c(0.002, 0)), 
@@ -1019,7 +1018,7 @@ msleep %&gt;%
   remove_ticks()</code></pre>
 <p><img src="graphics-guide/www/images/box-plot-1.png" width="624" /></p>
 </div>
-<div id="smoothed-kernel-density-plots" class="section level3">
+<!--<div id="smoothed-kernel-density-plots" class="section level3">
 <h3>Smoothed Kernel Density Plots</h3>
 <p>Continuous variables with smooth distributions are sometimes better represented with smoothed kernel density estimates than histograms or boxplots. <code>geom_density()</code> computes and plots a kernel density estimate. Notice the lumps around integers and halves in the following distribution because of rounding.</p>
 <pre class="r"><code>diamonds %&gt;%
@@ -1043,6 +1042,7 @@ msleep %&gt;%
 <p><img src="graphics-guide/www/images/kernel-density-plot-filled-1.png" width="624" /></p>
 </div>
 <div id="ridgeline-plots" class="section level3">
+
 <h3>Ridgeline Plots</h3>
 <p>Ridgeline plots are partially overlapping smoothed kernel density plots faceted by a categorical variable that pack a lot of information into one elegant plot.</p>
 <pre class="r"><code>library(ggridges)
@@ -1066,6 +1066,7 @@ ggplot(diamonds, mapping = aes(x = price, y = cut)) +
 <p><img src="graphics-guide/www/images/violin-plot-1.png" width="624" /></p>
 </div>
 <div id="bean-plot" class="section level3">
+
 <h3>Bean Plot</h3>
 <p>Individual outliers and important summary values are not visible in violin plots or smoothed kernel density plots. Bean plots, <a href="https://www.jstatsoft.org/article/view/v028c01">created by Peter Kampstra in 2008</a>, are violin plots with data shown as small lines in a one-dimensional sstrip plot and larger lines for the mean.</p>
 <pre class="r"><code>msleep %&gt;%
@@ -1097,7 +1098,7 @@ ggplot(diamonds, mapping = aes(x = price, y = cut)) +
 <p><img src="graphics-guide/www/images/beanplot-1.png" width="624" /></p>
 </div>
 </div>
-<div id="area-plot" class="section level2">
+<div id="area-plot" class="section level2">-->
 <h2>Area Plot</h2>
 <hr />
 <div id="stacked-area" class="section level3">
@@ -1258,7 +1259,7 @@ bad_drivers %&gt;%
 <h2>Highlighting</h2>
 <hr />
 <p><a href="https://yutannihilation.github.io/gghighlight/"><code>library(gghighlight)</code></a> enables the intuitive highlighting of ggplot2 plots. <code>gghighlight</code> modifies existing ggplot2 objects, so no other code should change. All of the highlighting is handled by the function <code>gghighlight()</code>, which can handle all types of geoms.</p>
-<p><em>Warning:</em> R will throw an error if too many colors are highlighted because of the design of <code>urbnthemes</code>. Simply decrease the number of highlighted geoms to solve this issue.</p>
+<p><em>Warning:</em> R will throw an error if too many colors are highlighted because of the design of <code>gssthemes</code>. Simply decrease the number of highlighted geoms to solve this issue.</p>
 <p>There are two main ways to highlight.</p>
 <div id="threshold" class="section level3">
 <h3>Threshold</h3>
@@ -1510,20 +1511,20 @@ ggsave(filename = &quot;cars.png&quot;, plot = plot2)</code></pre>
 
 ggsave(filename = &quot;cars.pdf&quot;, plot = plot2, width = 6.5, height = 4, device = cairo_pdf)</code></pre>
 </div>
-<div id="urbnthemes" class="section level2">
-<h2>urbnthemes</h2>
+<div id="gssthemes" class="section level2">
+<h2>gssthemes</h2>
 <div id="overview" class="section level3">
 <h3>Overview</h3>
-<p><code>urbnthemes</code> is a set of tools for creating Urban Institute-themed plots and maps in R. The package extends <code>ggplot2</code> with print and map themes as well as tools that make plotting easier at the Urban Institute. <code>urbnthemes</code> replaces the <a href="https://github.com/UrbanInstitute/urban_R_theme">urban_R_theme</a>.</p>
-<p>Always load <code>library(urbnthemes)</code> after <code>library(ggplot2)</code> or <code>library(tidyverse)</code>.</p>
+<p><code>gssthemes</code> is a set of tools for creating Ghana Statistical Service-themed plots and maps in R. The package extends <code>ggplot2</code> with print and map themes as well as tools that make plotting easier at the Ghana Statistical Service. <code>gssthemes</code> replaces the <a href="https://github.com/gss/urban_R_theme">urban_R_theme</a>.</p>
+<p>Always load <code>library(gssthemes)</code> after <code>library(ggplot2)</code> or <code>library(tidyverse)</code>.</p>
 </div>
 <div id="usage" class="section level3">
 <h3>Usage</h3>
-<p>Use <code>set_urbn_defaults(style = "print")</code> to set the default styles. <code>scatter_grid()</code>, <code>remove_ticks()</code>, <code>add_axis()</code>, and <code>remove_axis()</code> can all be used to improve graphics.</p>
+<p>Use <code>set_gss_defaults(style = "print")</code> to set the default styles. <code>scatter_grid()</code>, <code>remove_ticks()</code>, <code>add_axis()</code>, and <code>remove_axis()</code> can all be used to improve graphics.</p>
 <pre class="r"><code>library(ggplot2)
-library(urbnthemes)
+library(gssthemes)
 
-set_urbn_defaults(style = &quot;print&quot;)
+set_gss_defaults(style = &quot;print&quot;)
 
 ggplot(data = mtcars, mapping = aes(factor(cyl))) +
   geom_bar() + 
@@ -1535,19 +1536,19 @@ ggplot(data = mtcars, mapping = aes(factor(cyl))) +
 </div>
 <div id="combining-elements" class="section level3">
 <h3>Combining elements</h3>
-<p><code>library(urbnthemes)</code> contains functions for combining plot elements into graphics. <code>urbn_plot()</code> brings all of the elements together.</p>
+<p><code>library(gssthemes)</code> contains functions for combining plot elements into graphics. <code>gss_plot()</code> brings all of the elements together.</p>
 <ul>
-<li><code>urbn_logo_text()</code></li>
+<li><code>gss_logo_text()</code></li>
 <li><code>remove_ticks()</code></li>
 <li><code>remove_axis()</code></li>
 <li><code>scatter_grid()</code></li>
 <li><code>add_axis()</code></li>
-<li><code>urbn_geofacet</code></li>
+<li><code>gss_geofacet</code></li>
 </ul>
 <pre class="r"><code>library(ggplot2)
-library(urbnthemes)
+library(gssthemes)
 
-set_urbn_defaults(style = &quot;print&quot;)
+set_gss_defaults(style = &quot;print&quot;)
 
 plot &lt;- ggplot(data = mtcars, mapping = aes(factor(cyl))) +
   geom_bar() + 
@@ -1556,13 +1557,13 @@ plot &lt;- ggplot(data = mtcars, mapping = aes(factor(cyl))) +
        y = &quot;Count&quot;) +
   remove_ticks()
 
-urbn_plot(plot, urbn_logo_text(), ncol = 1, heights = c(30, 1))</code></pre>
+gss_plot(plot, gss_logo_text(), ncol = 1, heights = c(30, 1))</code></pre>
 <p><img src="graphics-guide/www/images/example2-1.png" width="624" /></p>
-<p>Sometimes it’s important to horizontally add the y-axis title above the plot. <code>urbn_y_title()</code> can be sued for this task. The following example goes one step further and adds the title between the legend and the plot.</p>
+<p>Sometimes it’s important to horizontally add the y-axis title above the plot. <code>gss_y_title()</code> can be sued for this task. The following example goes one step further and adds the title between the legend and the plot.</p>
 <pre class="r"><code>library(ggplot2)
-library(urbnthemes)
+library(gssthemes)
 
-set_urbn_defaults()
+set_gss_defaults()
 
 plot &lt;- ggplot(data = mtcars, mapping = aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point() + 
@@ -1574,47 +1575,47 @@ plot &lt;- ggplot(data = mtcars, mapping = aes(x = wt, y = mpg, color = factor(c
   labs(&quot;&quot;) +
   scatter_grid()
 
-urbn_plot(get_legend(plot),
-          urbn_y_title(&quot;Miles per gallon&quot;),
+gss_plot(get_legend(plot),
+          gss_y_title(&quot;Miles per gallon&quot;),
           remove_legend(plot), 
-          urbn_logo_text(), 
+          gss_logo_text(), 
           ncol = 1, 
           heights = c(3, 1, 30, 1))</code></pre>
 <p><img src="graphics-guide/www/images/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
 <div id="palettes" class="section level3">
 <h3>Palettes</h3>
-<p><code>urbnthemes</code> contains many quick-access color palettes from the <a href="http://urbaninstitute.github.io/graphics-styleguide/">Urban Institute Data Visualization Style Guide</a>. These palettes can be used to quickly overwrite default color palettes from <code>urbnthemes</code>.</p>
+<p><code>gssthemes</code> contains many quick-access color palettes from the <a href="http://gss.github.io/graphics-styleguide/">Ghana Statistical Service Data Visualization Style Guide</a>. These palettes can be used to quickly overwrite default color palettes from <code>gssthemes</code>.</p>
 <ul>
-<li><code>palette_urbn_main</code> is the eight color discrete palette of the Urban Institute with cyan, yellow, black, gray, magenta, green, space gray, and red.</li>
-<li><code>palette_urbn_diverging</code> is an eight color diverging palette.</li>
-<li><code>palette_urbn_quintile</code> is a five color blue palette that is good for quintiles.</li>
-<li><code>palette_urbn_politics</code> is a two color palette with blue for Democrats and red for Republicans.</li>
+<li><code>palette_gss_main</code> is the eight color discrete palette of the Ghana Statistical Service with cyan, yellow, black, gray, magenta, green, space gray, and red.</li>
+<li><code>palette_gss_diverging</code> is an eight color diverging palette.</li>
+<li><code>palette_gss_quintile</code> is a five color blue palette that is good for quintiles.</li>
+<li><code>palette_gss_politics</code> is a two color palette with blue for Democrats and red for Republicans.</li>
 </ul>
-<p>There are seven palettes that are continuous palettes of the seven unique colors in the discrete Urban Institute color palette:</p>
+<p>There are seven palettes that are continuous palettes of the seven unique colors in the discrete Ghana Statistical Service color palette:</p>
 <ul>
-<li><code>palette_urbn_cyan</code></li>
-<li><code>palette_urbn_gray</code></li>
-<li><code>palette_urbn_yellow</code></li>
-<li><code>palette_urbn_magenta</code></li>
-<li><code>palette_urbn_green</code></li>
-<li><code>palette_urbn_spacegray</code></li>
-<li><code>palette_urbn_red</code></li>
+<li><code>palette_gss_cyan</code></li>
+<li><code>palette_gss_gray</code></li>
+<li><code>palette_gss_yellow</code></li>
+<li><code>palette_gss_magenta</code></li>
+<li><code>palette_gss_green</code></li>
+<li><code>palette_gss_spacegray</code></li>
+<li><code>palette_gss_red</code></li>
 </ul>
 <p>Use <code>view_palette()</code> to see the palette:</p>
-<pre class="r"><code>view_palette(palette_urbn_magenta)</code></pre>
+<pre class="r"><code>view_palette(palette_gss_magenta)</code></pre>
 <pre><code>## [1] &quot;c(#351123, #761548, #af1f6b, #e90989, #e54096, #e46aa7, #eb99c2, #f5cbdf)&quot;</code></pre>
 <p><img src="graphics-guide/www/images/view-palette-1.png" width="624" /></p>
 <p>The vectors can be subset using base R syntax. This allows for the quick selection of specific colors from a palette.</p>
-<pre class="r"><code>palette_urbn_main[1:4]</code></pre>
+<pre class="r"><code>palette_gss_main[1:4]</code></pre>
 <pre><code>##      cyan    yellow     black      gray 
 ## &quot;#1696d2&quot; &quot;#fdbf11&quot; &quot;#000000&quot; &quot;#d2d2d2&quot;</code></pre>
-<pre class="r"><code>palette_urbn_spacegray[1:5]</code></pre>
+<pre class="r"><code>palette_gss_spacegray[1:5]</code></pre>
 <pre><code>## [1] &quot;#d5d5d4&quot; &quot;#adabac&quot; &quot;#848081&quot; &quot;#5c5859&quot; &quot;#332d2f&quot;</code></pre>
 </div>
 <div id="utility-functions" class="section level3">
 <h3>Utility functions</h3>
-<p><code>library(urbnthemes)</code> contains four functions that are helpful with managing font instalations:</p>
+<p><code>library(gssthemes)</code> contains four functions that are helpful with managing font instalations:</p>
 <ul>
 <li><code>lato_test()</code></li>
 <li><code>lato_install()</code></li>
@@ -1623,6 +1624,7 @@ urbn_plot(get_legend(plot),
 </ul>
 </div>
 </div>
+<!--
 <div id="bibliography-and-session-information" class="section level2">
 <h2>Bibliography and Session Information</h2>
 <hr />
@@ -1638,7 +1640,7 @@ urbn_plot(get_legend(plot),
 <p>Peter Kampstra (2008). Beanplot: A Boxplot Alternative for Visual Comparison of Distributions, Journal of Statistical Software, 2008. <a href="https://www.jstatsoft.org/article/view/v028c01" class="uri">https://www.jstatsoft.org/article/view/v028c01</a></p>
 <p>R Core Team (2017). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
 <p>Winston Chang, (2014). extrafont: Tools for using fonts. R package version 0.17. <a href="https://CRAN.R-project.org/package=extrafont" class="uri">https://CRAN.R-project.org/package=extrafont</a></p>
-<p>Yihui Xie (2018). knitr: A General-Purpose Package for Dynamic Report Generation in R. R package version 1.19.</p>
+<p>Yihui Xie (2018). knitr: A General-Purpose Package for Dynamic Report Generation in R. R package version 1.19.</p>-->
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>## R version 4.0.5 (2021-03-31)
 ## Platform: x86_64-apple-darwin17.0 (64-bit)
@@ -1657,7 +1659,7 @@ urbn_plot(get_legend(plot),
 ## other attached packages:
 ##  [1] AmesHousing_0.0.4     gghighlight_0.3.2     fivethirtyeight_0.6.2
 ##  [4] ggridges_0.5.3        ggrepel_0.9.1         gapminder_0.3.0      
-##  [7] urbnthemes_0.0.2      knitr_1.31            censusapi_0.7.1      
+##  [7] gssthemes_0.0.2      knitr_1.31            censusapi_0.7.1      
 ## [10] tidycensus_0.11.4     forcats_0.5.1         stringr_1.4.0        
 ## [13] dplyr_1.0.7           purrr_0.3.4           readr_2.1.1          
 ## [16] tidyr_1.1.4           tibble_3.1.6          ggplot2_3.3.5        
@@ -1687,7 +1689,7 @@ urbn_plot(get_legend(plot),
 ## [61] maptools_1.1-1      parallel_4.0.5      crayon_1.4.2       
 ## [64] lattice_0.20-41     splines_4.0.5       haven_2.3.1        
 ## [67] hms_1.1.1           pillar_1.6.4        uuid_0.1-4         
-## [70] urbnmapr_0.0.0.9002 reprex_2.0.0        glue_1.5.1         
+## [70] gssmapr_0.0.0.9002 reprex_2.0.0        glue_1.5.1         
 ## [73] evaluate_0.14       modelr_0.1.8        vctrs_0.3.8        
 ## [76] tzdb_0.2.0          Rttf2pt1_1.3.9      cellranger_1.1.0   
 ## [79] gtable_0.3.0        assertthat_0.2.1    xfun_0.22          
@@ -1697,8 +1699,8 @@ urbn_plot(get_legend(plot),
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Wickham, H., &amp; Stryjewski, L. (2011). 40 years of boxplots.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<!--<li id="fn1"><p>Wickham, H., &amp; Stryjewski, L. (2011). 40 years of boxplots.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>-->
 </div>
 
 
