@@ -6,7 +6,7 @@ output:
     output_dir: "."
 ---
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Gothic A1" />
 
 <div id="header">
 <img src="graphics-guide/www/images/logo.png" width="150">
@@ -15,14 +15,37 @@ output:
 ## 
 This website contains resources for using R at the Ghana Statistical Service  visualization and mapping,  Click on the links above to get started learning about R!
 
-*Ghana Statistical Service, with the mandate provided by Act 1003 to provide leadership and coordination of the National Statistical System (NSS), undertook a national capacity assessment. This led to the organisation of a national data roadmap that proposed three key priorities for action in strengthening the NSS in Ghana; namely: addressing data gaps,encouraging data use, and strengthening the data ecosystem.*#
+*Ghana Statistical Service, with the mandate provided by Act 1003 to provide leadership and coordination of the National Statistical System (NSS), undertook a national capacity assessment. This led to the organisation of a national data roadmap that proposed three key priorities for action in strengthening the NSS in Ghana; namely: addressing data gaps,encouraging data use, and strengthening the data ecosystem.*
+
+
+Data Visualisation ins 
+
+Pie Charts
+Pie charts should be used to shows the composition of a sample. They should only be used when the sum of the parts is be 100%. Pie chart should have a maximum of five categories. 
+
+Bar/Column Charts
+Bar/column charts should be used for comparisons. The bars should be sorted with values in ascending order (from largest to smallest). The only exceptions are for the other category and none which can be placed at the last position. Bars of these graphs should have a gap width of 30%.
+
+Stacked Bar/Column Charts
+Stacked bar/column charts should be used to compare the composition of different groups. It is best to utilize percentages so that the heights of all the bars will be equal.
+
+Line Graphs
+Line graphs should be used to present trends over time or for continuous variables such as age or ordered categories such as educational level. 
+
+Scatter Plots
+Scatter plots can be used to compare two variables in order to illustrate the correlation between two.
+
+Dot/Range Plots
+Dot/Range Plots should be used to display differences between two indicators or a range of values. 
+
+#
 
 
 ##
 ##
-## Data Science Lunch Chats
+<!-- ## Data Science Lunch Chats -->
 
-The Data Science team of the Ghana Statistical Service would host a monthly release of a video discussion with members of the Statistics space of Ghana. Each Session would be a 15-20 minutes discussiona and 2-5 minutes quick tip. Afterwards, attendees would be allowed to send in questions and propose topics for the next sessions. 
+<!-- The Data Science team of the Ghana Statistical Service would host a monthly release of a video discussion with members of the Statistics space of Ghana. Each Session would be a 15-20 minutes discussiona and 2-5 minutes quick tip. Afterwards, attendees would be allowed to send in questions and propose topics for the next sessions.  -->
 
 ##
 ##
