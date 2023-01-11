@@ -46,4 +46,4 @@ Dot/Range Plots should be used to display differences between two indicators or 
 
 ## Contact Info
 
-Please don't hesitate to contact Selaseh Akaho ([selaseh.akaho\@statsghana.gov.gh](mailto:selaseh.akaho@statsghana.gov.gh){.email}) or Laurent Smeet ([laurent.smeets\@live.nl](mailto:laurent.smeets@live.nl){.email}) with any thoughts or questions about Data Science Ghana Statistical Service.
+Please don't hesitate to contact Selaseh Akaho ([selaseh.akaho\@statsghana.gov.gh](mailto:selaseh.akaho@statsghana.gov.gh){.email}) or Laurent Smeets ([laurent.smeets\@live.nl](mailto:laurent.smeets@live.nl){.email}) with any thoughts or questions about Data Science Ghana Statistical Service.
